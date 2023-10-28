@@ -1,0 +1,25 @@
+/* Your Window styles go here */
+table {
+    margin: 10px;
+}
+
+#drawerId {
+    margin: 10px;
+}
+
+#drawerDiv {
+    margin: 10px;
+    display:flex;
+    flex-direction:row;
+}
+
+#tableDiv {
+    margin: 10px;
+    display: inline;
+    width: 70%;
+}
+
+#postcard {
+    width: 500px;
+    margin-left: 280px;
+}

@@ -1,0 +1,72 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+using namespace std;
+
+// robot
+struct Robot {
+    string name;
+    int speed;
+    string material;
+}
+
+class Character {
+    string name;
+    int health;
+}
+
+
+
+
+int main() {
+    
+    Character hero;
+    hero->name = "Arjun";
+    hero->health = 100;
+    
+    Robot my_robot;
+    Robot their_robot;
+  
+    // Write C++ code here
+    
+    // Learning print statements
+    // cout << "Hello world!" << endl;
+    // cout << "Hey Arjun" << endl;
+    
+    // string: text, words, sentences
+    // integer: any whole number
+    // float: any decimal number
+    
+    // Learning about variable types
+    string name = "Arman";
+    int health = 100;
+    float number = 1.3;
+    
+    cout << "What is the value of health?" << endl;
+    cin >> health;
+    
+    // if-else statements
+    if (health > 50) {
+        cout << name << ", you have a lot of health." << endl;
+    } else {
+        cout << name << ", drink a potion." << endl;
+    }
+    
+    // for loops: loop 5 times
+    //for (int i = 0; i < 5; i++) {
+    //    cout << "You took damage" << endl;
+    //    health -= 5;
+    //    cout << "Health: " << health << endl;
+    //}
+
+    // while loops: make your health go down to 50
+    while (health > 50) {
+        health -= 5;
+        cout << "Health: " << health << endl;
+    }
+    
+    cout << "We can move on" << endl;
+
+
+    return 0;
+}

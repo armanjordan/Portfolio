@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>My Project</title>
+        <script src = "script.js"></script>
+        <link rel="stylesheet" type="text/css" href="format.css"/>
+    </head>
+    <body>
+        <div id = "top">
+            <img id = "image" style = "display: none;" width = 200 height = 200 src = "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"></img>
+            <p class = "text">This is my cat</p>
+            <button class = "button" onclick = "showPicture()">Click me!</button>
+        </div>
+
+        <div id = "center">
+            <div>
+                <span id = "prev">&lt</span>
+                <span id = "display">Month</span>
+                <span id = "next">&gt</span>
+            </div>
+            <table id = "dates"></table>
+        </div>
+
+        <div id = "bottom">
+            <label class = "text" for = "input">Number: </label>
+            <input type = "number" id = "input" name = "input"> </input>
+            <button class = "button" onclick = "divide()">Divide the number by 2</button>
+
+            <p id = "output"></p>
+        </div>
+    </body>
+    <script>
+        let picker = new Picker();
+    </script>
+</html>

@@ -1,0 +1,171 @@
+#
+# CSE186 Assignment 8 Backend
+#
+
+openapi: '3.0.3'
+
+info:
+  description: CSE186 Assignment 8 Backend
+  version: 0.1.0
+  title: CSE186 Assignment 8 Backend
+
+servers:
+  - url: http://localhost:3010/v0
+
+paths:
+  /login:
+    post:
+      description: Login
+      requestBody:
+        description: Request Body
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Credentials'
+      responses:
+        200:
+          description: Email Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        default:
+          description: Unexpected Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /dummy:
+    get:
+      description: Dummy Endpoint
+      responses:
+        200:
+          description: Succesful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DummyResponse'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /mail:
+    get:
+      security:
+        - bearerAuth: []
+      description: Returns EMails from specified mailbox
+      parameters:
+        - in: query
+          name: mailbox
+          schema:
+            type: string
+          required: true
+          description: Mailbox name
+      responses:
+        200:
+          description: Email Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailsDisplayArray'
+        404:
+          description: Not Found
+        default:
+          description: Unexpected Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Error:
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+      required:
+        - code
+        - message
+
+    Credentials:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+      required:
+        - email
+        - password
+
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+        accessToken:
+          type: string
+      required:
+        - name
+        - accessToken
+
+    DummyResponse:
+      properties:
+        message:
+          type: string
+      required:
+        - message
+    
+    EmailsDisplayArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/EmailDisplay'
+    
+    EmailDisplay:
+      type: object
+      additionalProperties: false
+      properties:
+        opened:
+          type: string
+        starred:
+          type: string
+        avatar:
+          type: string
+        displayAvatar:
+          type: string
+        fromName:
+          type: string
+        fromEmail:
+          type: string
+          format: email
+        subject:
+          type: string
+        content:
+          type: string
+        received:
+          type: string
+      required:
+        - opened
+        - starred
+        - avatar
+        - displayAvatar
+        - fromName
+        - fromEmail
+        - subject
+        - content
+        - received
+
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes

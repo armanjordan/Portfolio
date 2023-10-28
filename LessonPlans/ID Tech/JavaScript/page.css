@@ -1,0 +1,10 @@
+#prompt {
+    background-image: linear-gradient(to right, blue, navy);
+    padding: 5px;
+    border: solid blue;
+    border-width: 5px;
+    
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}

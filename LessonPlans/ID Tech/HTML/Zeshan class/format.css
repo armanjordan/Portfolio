@@ -1,0 +1,116 @@
+#top {
+    margin: auto;
+    width: 60%;
+    border: 3px solid black;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(yellow, purple);
+}
+
+#center {
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+#bottom {
+    margin: auto;
+    width: 100%;
+    border: 3px solid cyan;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    bottom: 33px;
+    background-color: cornflowerblue;
+}
+
+#image {
+    border: 3px solid whitesmoke;
+}
+
+.text {
+    font-size: 30px;
+    color:darkblue;
+    text-decoration: underline dotted purple;
+}
+
+.button {
+    background-image: linear-gradient(green, brown);
+    font-size: 16px;
+}
+
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+#prev {
+    background-image: linear-gradient(to right, blue , navy);
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: solid blue;
+    border-width: 2px;
+
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+#next {
+    background-image: linear-gradient(to left, blue , navy);
+    padding-top: 0px;
+    padding-bottom: 3px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: solid blue;
+    border-width: 2px;
+
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+#display {
+    width: 1000px;
+    height: 1000px;
+    background-image: linear-gradient(navy , lightblue);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 7px;
+    padding-left: 15px;
+    border: solid blue;
+    border-width: 2px;
+
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+    height: 17px;
+
+    background-color: lightblue;
+    border: solid navy;
+    color: white;
+
+    border-width: 2px;
+}
+  
+th:hover, td:hover {
+    background-color: blue;
+}
+
+#today {
+    background-color: navy;
+}
